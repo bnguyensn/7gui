@@ -1,0 +1,9 @@
+.cache
+.vs
+.idea
+package.json
+package-lock.json
+public
+build
+dist
+.next
