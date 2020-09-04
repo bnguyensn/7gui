@@ -5,7 +5,7 @@ import Select from '../components/core/Select';
 import { CircleDrawer, CRUD, Timer } from '../components/7gui';
 
 export default function Home() {
-  const [curGui, setCurGui] = useState('Counter');
+  const [curGui, setCurGui] = useState('Timer');
 
   let displayedGui = null;
   switch (curGui) {

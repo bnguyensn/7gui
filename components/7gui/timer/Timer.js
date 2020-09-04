@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import ProgressBar from './components/ProgressBar';
 import ElapsedTimeCounter from './components/ElapsedTimeCounter';
 import TimerSlider from './components/TimerSlider';
-import ResetButton from './components/ResetButton';
 
 const FPS = 60;
 const TIMER_INTERVAL = 1000 / FPS;
@@ -54,7 +53,7 @@ export default function Timer() {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-col">
       <ProgressBar
         progress={progress}
         barWidth={BAR_WIDTH}
@@ -70,7 +69,11 @@ export default function Timer() {
         step={SLIDER_STEP}
         handleUpdate={handleSliderUpdate}
       />
-      <ResetButton handleClick={handleResetButtonClick} />
+      <div>
+        <button className="btn btn-blue" onClick={handleResetButtonClick}>
+          Reset
+        </button>
+      </div>
     </div>
   );
 }

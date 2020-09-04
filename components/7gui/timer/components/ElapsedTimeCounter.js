@@ -11,5 +11,5 @@ export default function ElapsedTimeCounter({ elapsedTime, curSliderTime }) {
     text = `Elapsed time: ${formatMs(elapsedTime)}s`;
   }
 
-  return <div>{text}</div>;
+  return <div className="py-2">{text}</div>;
 }

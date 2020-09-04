@@ -4,7 +4,16 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 px-4 py-8 text-white">
       <p className="text-center">
-        <span>7 GUI is inspired by this</span>
+        <span>
+          Made by{' '}
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://twitter.com/bnguyensn"
+          >
+            @bnguyensn
+          </a>
+        </span>
         <span className="px-2">|</span>
         <a
           target="_blank"
