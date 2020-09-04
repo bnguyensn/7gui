@@ -1,7 +1,8 @@
-import React from "react";
+import React from 'react';
+import clsx from 'clsx';
 
 const filterFn = (filter, text) =>
-  (text.toLowerCase()).includes(filter.toLowerCase());
+  text.toLowerCase().includes(filter.toLowerCase());
 
 const ItemList = ({ items, lastNameFilter, selectedItem, setSelectedItem }) => {
   // We expect items to be in the form of:
@@ -14,12 +15,12 @@ const ItemList = ({ items, lastNameFilter, selectedItem, setSelectedItem }) => {
   const itemEls = Object.entries(items)
     .filter(
       ([id, { lastName }]) =>
-        !lastNameFilter || filterFn(lastNameFilter, lastName),
+        !lastNameFilter || filterFn(lastNameFilter, lastName)
     )
     .map(([id, { firstName, lastName }]) => {
       const handleClick = () => {
         if (selectedItem === id) {
-          setSelectedItem("");
+          setSelectedItem('');
         } else {
           setSelectedItem(id);
         }
@@ -30,7 +31,10 @@ const ItemList = ({ items, lastNameFilter, selectedItem, setSelectedItem }) => {
       return (
         <div
           key={id}
-          className={`crud-item-list-item ${selectedItem === id && "selected"}`}
+          className={clsx(
+            'p-1 cursor-pointer',
+            selectedItem === id && 'bg-blue-500 text-white'
+          )}
           onClick={handleClick}
         >
           {contentText}
@@ -38,7 +42,7 @@ const ItemList = ({ items, lastNameFilter, selectedItem, setSelectedItem }) => {
       );
     });
 
-  return <div className="crud-item-list-ctn">{itemEls}</div>;
+  return <div className="">{itemEls}</div>;
 };
 
 export default ItemList;

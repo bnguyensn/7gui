@@ -6,9 +6,12 @@ const TextField = ({ name, labelText, textValue, setTextValue }) => {
   };
 
   return (
-    <div className="crud-text-field-ctn">
-      <label htmlFor={name}>{labelText}</label>
+    <div className="w-full p-1">
+      <label htmlFor={name} className="pr-2 whitespace-no-wrap">
+        {labelText}
+      </label>
       <input
+        className="border-b border-solid border-gray-900 p-1"
         id={name}
         type="text"
         name={name}

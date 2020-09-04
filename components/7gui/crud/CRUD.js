@@ -17,7 +17,7 @@ const CRUD = () => {
 
   const handleCreate = () => {
     if (!firstNameText || !lastNameText) {
-      setErrText('Both first name and last name need be to present!');
+      setErrText('Both first name and last name need to be present!');
 
       return;
     }
@@ -81,19 +81,17 @@ const CRUD = () => {
 
   return (
     <div className="flex flex-col p-2 w-full">
-      <div className="crud-header-ctn">
-        <div className="crud-filter-ctn">
-          <TextField
-            labelText="Surname filter:"
-            name="crud-filter-text"
-            textValue={lastNameFilterText}
-            setTextValue={setLastNameFilterText}
-          />
-        </div>
+      <div className="py-2 w-6/12">
+        <TextField
+          labelText="Surname filter:"
+          name="crud-filter-text"
+          textValue={lastNameFilterText}
+          setTextValue={setLastNameFilterText}
+        />
       </div>
 
-      <div className="grid grid-cols-2">
-        <div className="">
+      <div className="w-full grid grid-cols-2 gap-2">
+        <div className="h-40 overflow-y-auto flex flex-col border-solid border border-gray-900 px-2">
           <ItemList
             items={db}
             lastNameFilter={lastNameFilterText}
@@ -102,39 +100,37 @@ const CRUD = () => {
           />
         </div>
 
-        <div className="">
-          <div className="crud-name-inputs-ctn">
-            <TextField
-              labelText="Name:"
-              name="crud-first-name-text"
-              textValue={firstNameText}
-              setTextValue={setFirstNameText}
-            />
-            <TextField
-              labelText="Surname:"
-              name="crud-last-name-text"
-              textValue={lastNameText}
-              setTextValue={setLastNameText}
-            />
-          </div>
-
-          <div className="crud-err-text-ctn">{errText}</div>
+        <div className="py-2">
+          <TextField
+            labelText="Name:"
+            name="crud-first-name-text"
+            textValue={firstNameText}
+            setTextValue={setFirstNameText}
+          />
+          <TextField
+            labelText="Surname:"
+            name="crud-last-name-text"
+            textValue={lastNameText}
+            setTextValue={setLastNameText}
+          />
         </div>
       </div>
 
-      <div className="">
+      <div className="py-2">
         <div className="crud-action-buttons-ctn">
-          <Button id="crud-create-btn" onClick={handleCreate}>
+          <button className="btn btn-blue mr-2" onClick={handleCreate}>
             Create
-          </Button>
-          <Button id="crud-update-btn" onClick={handleUpdate}>
+          </button>
+          <Button className="btn btn-blue mr-2" onClick={handleUpdate}>
             Update
           </Button>
-          <Button id="crud-delete-btn" onClick={handleDelete}>
+          <Button className="btn btn-blue" onClick={handleDelete}>
             Delete
           </Button>
         </div>
       </div>
+
+      <div className="py-2 text-red-500">{errText && `🛑 ${errText}`}</div>
     </div>
   );
 };
