@@ -12,7 +12,7 @@ const NavLinkDesktop = ({ href, children }) => {
 export default function Header() {
   return (
     <header>
-      <nav className="mx-auto flex items-center p-4 max-w-screen-lg">
+      <nav className="container mx-auto flex items-center p-4">
         <h4 className="flex-grow text-blue-500">
           <strong>7 GUI</strong>
         </h4>

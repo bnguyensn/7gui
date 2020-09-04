@@ -1,0 +1,155 @@
+/* Layout */
+
+.crud-ctn {
+  display: grid;
+
+  /* Create a 2 x 3 grid (3 rows, 2 columns) */
+  /* The middle (2nd) row takes up 80% of the height */
+  /* The 2 columns have equal width */
+  grid: 20% 60% 20% / 50% 50%;
+
+  height: 225px;
+  width: 400px;
+  padding: 0 .5rem;
+
+  background-color: #eeeeee;
+  border-radius: 5px;
+  border: 1px solid #212121;
+}
+
+.crud-header-ctn {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+
+.crud-body-left-ctn {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.crud-body-right-ctn {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.crud-footer-ctn {
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+}
+
+/* ***** Individual components ***** */
+
+/* Error text */
+
+.crud-err-text-ctn {
+  padding: .25rem;
+  color: #ef5350;
+  font-weight: bold;
+}
+
+/* Text field */
+
+.crud-text-field-ctn {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+}
+
+.crud-text-field-ctn > label {
+  padding-right: .25rem;
+  white-space: nowrap;
+}
+
+.crud-text-field-ctn > input {
+}
+
+/* ***** Filter ***** */
+
+.crud-filter-ctn {
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+  width: 50%;
+}
+
+.crud-filter-ctn > * > label {
+  width: 60%;
+}
+
+.crud-filter-ctn > * > input {
+  width: 40%;
+}
+
+/* ***** Action buttons ***** */
+
+.crud-action-buttons-ctn {
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+}
+
+.crud-action-buttons-ctn > button {
+  margin-right: 1rem;
+  padding: 0 1rem;
+
+  border-radius: 5px;
+  border: 1px solid #212121;
+  cursor: pointer;
+}
+
+.crud-action-buttons-ctn > button#crud-create-btn:hover {
+  color: #ffffff;
+  background-color: #66bb6a;
+}
+
+.crud-action-buttons-ctn > button#crud-update-btn:hover {
+  color: #ffffff;
+  background-color: #ffa726;
+}
+
+.crud-action-buttons-ctn > button#crud-delete-btn:hover {
+  color: #ffffff;
+  background-color: #ef5350;
+}
+
+/* ***** Item list ***** */
+
+.crud-item-list-ctn {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+
+  border: 1px solid #212121;
+}
+
+.crud-item-list-item {
+  width: 100%;
+  cursor: pointer;
+}
+
+.crud-item-list-item.selected {
+  color: #ffffff;
+  background-color: #66bb6a;
+}
+
+/* ***** Name inputs ***** */
+
+.crud-name-inputs-ctn {
+  padding: .25rem;
+}
+
+.crud-name-inputs-ctn > * {
+  margin-bottom: .25rem;
+}
+
+.crud-name-inputs-ctn > * > * {
+  width: 50%;
+}
+
+.crud-name-inputs-ctn > *:last-child {
+  margin-bottom: 0;
+}
