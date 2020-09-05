@@ -26,16 +26,24 @@ const ItemList = ({ items, lastNameFilter, selectedItem, setSelectedItem }) => {
         }
       };
 
+      const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+          handleClick();
+        }
+      };
+
       const contentText = `${lastName}, ${firstName}`;
 
       return (
         <div
           key={id}
+          tabIndex={0}
           className={clsx(
             'p-1 cursor-pointer',
             selectedItem === id && 'bg-blue-500 text-white'
           )}
           onClick={handleClick}
+          onKeyDown={handleKeyDown}
         >
           {contentText}
         </div>

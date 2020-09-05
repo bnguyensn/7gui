@@ -167,9 +167,13 @@ const CircleDrawer = () => {
 
   return (
     <div className="flex flex-col">
-      <div>
-        <button onClick={handleUndoClick}>Undo</button>
-        <button onClick={handleRedoClick}>Redo</button>
+      <div className="mb-2">
+        <button className="btn btn-blue mr-2" onClick={handleUndoClick}>
+          Undo
+        </button>
+        <button className="btn btn-blue" onClick={handleRedoClick}>
+          Redo
+        </button>
       </div>
 
       <div className="relative border border-solid border-gray-900">
