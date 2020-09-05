@@ -11,7 +11,7 @@ const TextField = ({ name, labelText, textValue, setTextValue }) => {
         {labelText}
       </label>
       <input
-        className="border-b border-solid border-gray-900 p-1"
+        className="border border-solid border-gray-900 p-1 shadow-inner"
         id={name}
         type="text"
         name={name}

@@ -121,12 +121,12 @@ const CRUD = () => {
           <button className="btn btn-blue mr-2" onClick={handleCreate}>
             Create
           </button>
-          <Button className="btn btn-blue mr-2" onClick={handleUpdate}>
+          <button className="btn btn-blue mr-2" onClick={handleUpdate}>
             Update
-          </Button>
-          <Button className="btn btn-blue" onClick={handleDelete}>
+          </button>
+          <button className="btn btn-blue" onClick={handleDelete}>
             Delete
-          </Button>
+          </button>
         </div>
       </div>
 

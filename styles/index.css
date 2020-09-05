@@ -88,6 +88,10 @@ a:hover {
   @apply bg-blue-700;
 }
 
+.btn-blue:focus {
+  outline: 4px solid #64b5f6;
+}
+
 /* Start purging... */
 @tailwind utilities;
 /* Stop purging. */
