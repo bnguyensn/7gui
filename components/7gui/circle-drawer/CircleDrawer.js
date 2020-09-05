@@ -166,13 +166,13 @@ const CircleDrawer = () => {
   // ---------- Render ---------- //
 
   return (
-    <div className="circle-drawer-ctn">
+    <div className="flex flex-col">
       <div>
         <button onClick={handleUndoClick}>Undo</button>
         <button onClick={handleRedoClick}>Redo</button>
       </div>
 
-      <div className="circle-drawer-canvas-ctn">
+      <div className="relative border border-solid border-gray-900">
         <Canvas
           createCircleOnClick={createCircleOnClick}
           checkHitCircle={highlightCircleOnMouseMove}

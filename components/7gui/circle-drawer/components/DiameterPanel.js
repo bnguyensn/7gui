@@ -19,7 +19,10 @@ const DiameterPanel = ({
 
   return (
     <div
-      className={clsx('circle-drawer-diameter-panel-ctn', !show && 'hidden')}
+      className={clsx(
+        'absolute flex flex-col items-center w-40 bg-gray-100 border border-solid border-gray-500',
+        !show && 'hidden'
+      )}
       style={{
         top: position.top,
         left: position.left,

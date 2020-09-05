@@ -27,7 +27,6 @@ const Canvas = ({ createCircleOnClick, checkHitCircle, showContextMenu }) => {
   return (
     <canvas
       id="circle-drawer-canvas"
-      className="circle-drawer-canvas"
       width={500}
       height={500}
       onClick={handleClick}
