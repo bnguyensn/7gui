@@ -42,7 +42,7 @@ const ItemList = ({ items, lastNameFilter, selectedItem, setSelectedItem }) => {
       );
     });
 
-  return <div className="">{itemEls}</div>;
+  return <div>{itemEls}</div>;
 };
 
 export default ItemList;

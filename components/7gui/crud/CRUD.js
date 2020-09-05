@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import useDb from './db/dbHook';
 import TextField from './components/TextField';
-import Button from './components/Button';
 import ItemList from './components/ItemList';
 
 const CRUD = () => {
