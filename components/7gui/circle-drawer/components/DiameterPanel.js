@@ -1,6 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
 
+const formatCoords = (coord) => coord.toFixed(2);
+
 const DiameterPanel = ({
   show,
   position,
@@ -20,7 +22,7 @@ const DiameterPanel = ({
   return (
     <div
       className={clsx(
-        'absolute flex flex-col items-center w-40 bg-gray-100 border border-solid border-gray-500',
+        'absolute flex flex-col items-center p-2 bg-gray-100 border border-solid border-gray-500',
         !show && 'hidden'
       )}
       style={{
@@ -28,9 +30,11 @@ const DiameterPanel = ({
         left: position.left,
       }}
     >
-      <h6>
-        Adjust diameter of circle at ({centerX}, {centerY})
-      </h6>
+      <p>
+        {`Adjust diameter of circle at (${formatCoords(centerX)},${formatCoords(
+          centerY
+        )})`}
+      </p>
       <div>
         <input
           type="range"
@@ -44,7 +48,9 @@ const DiameterPanel = ({
           onInput={onSliderChange}
         />
       </div>
-      <button onClick={handleDoneBtnClick}>Done</button>
+      <button className="btn btn-blue" onClick={handleDoneBtnClick}>
+        Done
+      </button>
     </div>
   );
 };
