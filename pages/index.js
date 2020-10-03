@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import Layout from '../components/layout/Layout';
-import Select from '../components/core/Select';
-import { CircleDrawer, CRUD, Timer } from '../components/7gui';
+import Layout from '../libs/layout/Layout';
+import Select from '../libs/core/Select';
+import { CircleDrawer, CRUD, Timer } from '../libs/7gui';
 
 export default function Home() {
   const [curGui, setCurGui] = useState('Timer');
