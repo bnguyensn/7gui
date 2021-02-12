@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import * as React from 'react';
 
 import Layout from '../libs/layout/Layout';
 import Select from '../libs/core/Select';
 import { CircleDrawer, CRUD, Timer, Cells } from '../libs/7gui';
 
 export default function Home() {
-  const [curGui, setCurGui] = useState('Cells');
+  const [curGui, setCurGui] = React.useState('Cells');
 
   let displayedGui = null;
   switch (curGui) {

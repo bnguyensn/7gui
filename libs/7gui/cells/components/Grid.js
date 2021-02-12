@@ -12,14 +12,21 @@ function AxisCell({ label }) {
   );
 }
 
-function NormalCell({ cellId, isEditing, setEditing }) {
+function NormalCell({ cellId, isEditing, setEditing, content, setData }) {
   const handleDoubleClick = () => {
     setEditing(cellId);
   };
 
+  const updateContent = (newContent) => {
+    setData((prevData) => ({
+      ...prevData,
+      [cellId]: newContent,
+    }));
+  };
+
   return (
     <div
-      className="flex justify-center items-center flex-none border-2 border-gray-300 border-solid"
+      className="flex justify-center items-center flex-none border-2 border-gray-300 border-solid focus:outline-none focus:border-blue-400"
       style={{ width: 50, height: 25 }}
       tabIndex={0}
       onDoubleClick={handleDoubleClick}
@@ -27,7 +34,9 @@ function NormalCell({ cellId, isEditing, setEditing }) {
       <div
         className={clsx(isEditing && 'bg-blue-200')}
         style={{ width: '100%', height: '100%' }}
-      />
+      >
+        {content}
+      </div>
     </div>
   );
 }
@@ -39,7 +48,14 @@ function RowCtn({ children }) {
   return <div className="flex items-center">{children}</div>;
 }
 
-export default function Grid({ rowCount, colCount, editing, setEditing }) {
+export default function Grid({
+  rowCount,
+  colCount,
+  editing,
+  setEditing,
+  data,
+  setData,
+}) {
   const gridElsByRows = [];
 
   // Create the first row (the column label row)
@@ -57,6 +73,7 @@ export default function Grid({ rowCount, colCount, editing, setEditing }) {
     const row = [<AxisCell key="" label={rowIndex} />];
     for (let colIndex = 65; colIndex < colCount + 65; colIndex++) {
       const cellId = `${rowIndex}${String.fromCharCode(colIndex)}`;
+      const cellContent = data[cellId] ? data[cellId] : '';
 
       row.push(
         <MemoizedNormalCell
@@ -64,6 +81,8 @@ export default function Grid({ rowCount, colCount, editing, setEditing }) {
           cellId={cellId}
           isEditing={editing === cellId}
           setEditing={setEditing}
+          content={cellContent}
+          setData={setData}
         />
       );
     }
