@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import * as React from 'react';
 import clsx from 'clsx';
 
 function AxisCell({ label }) {
@@ -58,7 +58,7 @@ export default function Grid({
 }) {
   const gridElsByRows = [];
 
-  // Create the first row (the column label row)
+  // Create the first row (the column label row e.g. A - Z)
 
   const colLabelRow = [<AxisCell key="" label="" />];
   for (let colIndex = 65; colIndex < colCount + 65; colIndex++) {

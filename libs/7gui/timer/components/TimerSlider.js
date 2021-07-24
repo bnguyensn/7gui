@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 export default function TimerSlider({ curTime, maxTime, step, handleUpdate }) {
   return (

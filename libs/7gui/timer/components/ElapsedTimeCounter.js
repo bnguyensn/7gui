@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 const formatMs = (f) => (f / 1000).toFixed(1);
 

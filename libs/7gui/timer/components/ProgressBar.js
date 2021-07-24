@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 export default function ProgressBar({ progress, barWidth, barHeight }) {
   const progressBarFillLeftPos = Math.round(progress * barWidth - barWidth);
